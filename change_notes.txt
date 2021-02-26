@@ -1,0 +1,55 @@
+- Nabeel
+= Mike
+BeagleBone Login: (debian:temppwd)
+TCP: 192.168.121.64
+usb = 192.168.7.1
+
+
+- psu toggling multiple times //psu_worker_dowork //slot_params[i].psu_status != 1 
+
+- makes sure start button not available until psu_status == 1 
+
+- automate 'START' button press after pretest //do_pretest
+
+= when starting and ending each step print FirmwareEn status to CMD prompt log to see that it is in the proper mode.
+
+= ZeroC not booting up properly?
+  - IP address returns with 0: capture error and cascade upwards to prevent server from starting. Set mailbox error
+
+= Device current and temperature on BIB picture are not showing any real values for the DUT installed locations.
+
+= always the second(last) slot to power up is the one to toggle the power supply’s on and of two to three times.
+
+= looks like START button appears when first Python dialog passes file, and but not waiting for all python scripts to pass folder information.
+check to see if this needs to be fixed before the Automate 'Start' button feature is added. see screen shot "Pretest_StartButton before second passes file excahnge.png"
+
+= the Status Box sould add "Ramping Temperaure" to the period when a temperature is set "lower", and then reached can change the test step name. works for going hotter ramp.
+
+= when running the 7 setp 45C test "UC_FURY_7step_short_test_45C.step.csv" it quickly skips through setp 2&3.
+
+
+
+= need to have better indicator when steps file is completed Status is STOPPED and Message bar is Complete, Actually move the Chamber# and Status box to the right over the control area.
+	(CN 9/27/19 Changes made directly on the Form1.cs[Design])
+
+= Separate the Imeasure on the BIB display to be individual per Phase.
+	(CN 10/3/19 Moved Imeasured into the information tab as requested, created a "ADC" and 'PSU" separation for measurements on form 2.)
+
+= When scanning DUT's/Rescanning Duts Make indication on UI "Busy Gathering Devices" until all devices are checked. Rescan can take ~10 seconds
+	(CN 10/1/19 Coded into the main. Refer to CN4 for multiple changes)
+
+= is it possible to make board dialog popup have only one instance, it seems that the same slot can be opened multiple times and then we have multiple floating dialogs.
+also update the SLot# in the top left corner to be 1 based.
+	(CN 9/27/19 Form1.cs keyword:CN1)
+
+= 8/10/19 Just had an instance where slot 1 went to dark grey in the middle of a run, so step seemed to get stuck.
+	(CN 10/3/19 Cannot reproduce)
+
+= The control changes to pretest even if the load is aborted.
+	(CN 10/3/19 Cannot reproduce)
+
+= Program EEPROM on BIB for correct Serial Number //memory.py
+	(CN 10/4/19 Procedure to do so has been created, and done)
+
+= strange dut detection?
+	(CN 10/4/19 Possibly solved the problem? WITH A BIG QUESTION MARK. NEVERMIND! NOPE. WELL KINDA NOW? NOPE.)
